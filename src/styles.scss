@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+    background-color: #000;
+    margin: 0;
+    padding: 0;
+  }
+  
+  app-root {
+    display: block; /* Makes the root component fill the complete body */
+  }
