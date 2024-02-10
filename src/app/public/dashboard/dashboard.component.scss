@@ -1,0 +1,114 @@
+@import '../../../assets/themes/variables.scss';
+
+.dashboard {
+    width: 100%;
+    height: 100vh;
+    
+    .nav-menu {
+        height: 70px; 
+        background-color: transparent;
+        border-bottom: 1px solid $primary;
+        background-color: $background;
+
+        &__right {
+            border-left: 1px solid $primary;
+            width: 65%;
+            display: flex;
+            align-items: center; 
+            justify-content: space-between;
+
+            .contact-link {
+                border-left: 1px solid $primary;
+            }
+            a {
+                transition-duration: 800ms;
+            }
+            a:hover {
+                color: $secondary;
+            }
+        }
+        &__left {
+            width: 35%;
+
+            .logo {
+                font-family: 'Federo';
+                .logo-shadow {
+                    font-family: inherit;
+                    color: #6d6d6d;
+                }
+            }
+            .hamburguer-button {
+                width: 27px;
+                height: 21px;
+                position: relative;
+                right: 20px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                    .segment-top, .segment-middle, .segment-bottom {
+                        width: 100%;
+                        position: absolute;
+                        height: calc(100%/8);
+                        background-color: $primary;
+                        transition: 500ms all;
+                    }
+                    .segment-top {
+                        bottom: 100%
+                    }
+                    .segment-middle {
+                        bottom: 50%;
+                        transition: 100ms all
+                    }
+                    .segment-bottom {
+                        bottom: 0;
+                    }
+                    
+            }
+            .hamburguer-button:hover {
+                .segment-top {
+                    bottom: 50%;
+                    transform: rotate(45deg);
+                    background-color: $secondary;
+                }
+                .segment-middle {
+                    height: 0;
+                    background-color: $secondary;
+                }
+                .segment-bottom {
+                    bottom: 50%;
+                    transform: rotate(-45deg);
+                    background-color: $secondary;
+                }
+            }
+        }
+    }
+
+    .menu-dropdown {
+        background-color: $backgroud-light;
+        height: 140px;
+        top: -70px;
+        position: absolute;
+        z-index: -1;
+        overflow: hidden;
+        transition: top 300ms ease-in;
+
+        &__section {
+            height: 33%;
+            border-bottom: 1px solid $primary;
+        }
+    }
+
+    @media only screen and (max-width: $media-md) { 
+        .nav-menu {
+            transition: border-bottom 300ms ease-in;
+            &__right {
+                display: none;
+                width: 0%;
+            }
+            &__left {
+                width: 100%;
+            }
+        }
+    }
+}

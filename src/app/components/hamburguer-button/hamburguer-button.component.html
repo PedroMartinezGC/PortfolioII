@@ -1,0 +1,8 @@
+
+    <div [ngClass]="isButtonClicked ? 'hamburguer-button-opened hamburguer-button' : 'hamburguer-button'" (mouseleave)="setColor(mainColor)" 
+        (mouseenter)="setColor(hoverColor)">
+        <div class="segment-top" [ngStyle]="{'background-color': currentColor }"></div>
+        <div class="segment-middle" [ngStyle]="{'background-color': currentColor }"></div>
+        <div class="segment-bottom" [ngStyle]="{'background-color': currentColor }"></div>
+    </div>
+
