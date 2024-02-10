@@ -1,11 +1,77 @@
-/* You can add global styles to this file, and also import other style files */
+@import './assets/themes/variables.scss';
+
+/* FONTS */
+@font-face {
+  font-family: 'Federo';
+  src: url('assets/fonts/FederoRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('assets/fonts/PoppinsMedium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* FONT SIZE CLASSES */
+.title-xs { font-size: $title-xs }
+.title-sm { font-size: $title-sm }
+.title-md { font-size: $title-md }
+.title-lg { font-size: $title-lg }
+.title-xl { font-size: $title-xl }
+
+.body-xs { font-size: $body-xs }
+.body-sm { font-size: $body-sm }
+.body-md { font-size: $body-md }
+.body-lg { font-size: $body-lg }
+.body-xl { font-size: $body-xl }
+
+/* GENERAL COGNFIG */
 
 body {
-    background-color: #000;
+    background-color: $background;
+    color: $primary;
     margin: 0;
     padding: 0;
-  }
+}
   
-  app-root {
+app-root {
     display: block; /* Makes the root component fill the complete body */
-  }
+}
+
+//Page title and contacts title (dynamic ones)
+h1 {
+  font-family: 'Federo';
+  //font-size: $title-xl;
+}
+
+// Sections title
+h2 {
+  font-family: 'Poppins';
+  //font-size: $title-lg;
+}
+
+// Skills sections titles
+h3 {
+  font-family: 'Poppins';
+  //font-size: $title-lg;
+}
+
+// Skills subsections titles
+h4 {
+  font-family: 'Poppins';
+  //font-size: $title-md;
+}
+
+span {
+  font-family: 'Poppins';
+ // font-size: $body-sm;
+}
+
+a {
+  font-family: 'Poppins';
+  text-decoration: none;
+  color: inherit;
+}

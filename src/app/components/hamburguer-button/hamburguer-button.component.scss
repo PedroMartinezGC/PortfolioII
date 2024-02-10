@@ -1,0 +1,44 @@
+
+    .hamburguer-button {
+        width: 27px;
+        height: 21px;
+        position: relative;
+        right: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
+    
+            .segment-top, .segment-middle, .segment-bottom {
+                width: 100%;
+                position: absolute;
+                height: calc(100%/8);
+            }
+            .segment-top {
+                bottom: 100%;
+                transition: 300ms ease-in;
+            }
+            .segment-middle {
+                bottom: 50%;
+                transition: height 100ms ease-out, background-color 300ms ease-in;
+            }
+            .segment-bottom {
+                transition: 300ms ease-in;
+                bottom: 0;
+            }
+            
+    }
+    .hamburguer-button-opened {
+        .segment-top {
+            bottom: 50%;
+            transform: rotate(45deg);
+        }
+        .segment-middle {
+            height: 0;
+        }
+        .segment-bottom {
+            bottom: 50%;
+            transform: rotate(-45deg);
+        }
+    }
+
