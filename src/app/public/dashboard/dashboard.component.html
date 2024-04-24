@@ -15,7 +15,7 @@
                     <span class="body-xs">Angular</span>
                 </div>
             </div>
-            <div>
+            <div *ngIf="showMobileMenu">
                 <pf-hamburguer-button #hamburguerButton mainColor="#f6ebe5" hoverColor="#f6ebe5" id="menuDropdown" (click)="isMenuOpened ? '' : toggleDropdownMenu()"></pf-hamburguer-button>
             </div>
         </div>
@@ -33,10 +33,70 @@
     </div>
 
     <!-- DROPDOWN MENU (MOBILE) -->
-    <div class="menu-dropdown d-flex flex-column w-100" #menuDropdown>
+    <div class="menu-dropdown d-flex flex-column w-100" #menuDropdown *ngIf="showMobileMenu ">
         <div class="menu-dropdown__section title-xs d-flex align-items-center"><span class="ms-3">Projects</span></div>
         <div class="menu-dropdown__section title-xs d-flex align-items-center"><span class="ms-3">About me</span></div>
         <div class="menu-dropdown__section title-xs d-flex align-items-center"><span class="ms-3">Contact</span></div>
     </div>
 
+    <!-- CONTENT -->
+    <div class="dashboard__content">
+
+        <!-- HEADER SECTION -->
+        <div id="header-section">
+            <div class="header-image">
+                <img src="assets\images\ryoji-iwata.jpg" alt="">
+            </div>
+
+            <div class="header-slider">
+                <div #sliderTopBox class="header-slider__top">
+                    <div #slideTop class="slide">
+                        <h1>PEDRO</h1>
+                        <h1>DEV</h1>
+                        <h1>CICUENDEZ</h1>
+                        <h1>PEDRO</h1>
+                        <h1>DEV</h1>
+                        <h1>CICUENDEZ</h1>
+                    </div>
+                </div>
+                <div #sliderBottomBox class="header-slider__bottom">
+                    <div #slideBottom class="slide">
+                        <h1>GRANDE</h1>
+                        <h1>MARTINEZ</h1>
+                        <h1>FRONTEND</h1>
+                        <h1>GRANDE</h1>
+                        <h1>MARTINEZ</h1>
+                        <h1>FRONTEND</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ABOUT ME -->
+        <div class="about-me">
+            <div>
+                <span class="body-md about-me__title">humility time</span>
+            </div>
+            <div>
+                <span class="about-me__description">Appassionate young FrontEnd developer, designer and engineer. Improving for beauty and dynamism.</span>
+            </div>
+        </div>
+
+        <!-- PROJECTS -->
+
+        <!-- PROFILE -->
+        <div class="profile">
+            <span class="profile__title">KNOW THE CREATOR</span>
+            <p class="profile__description1">
+                Frontend Developer specialist in Angular. A very interested person in web/app development. 
+                Using dynamically JavaScript, Angular and Ionic for the bones, and Figma and Webflow for an impressive beauty face.
+            </p>
+            <p class="profile__description2">
+                I have spent a year in other country and I have been in contact with all kinds of people, so mobility outside the country will not be a problem.
+            </p>
+            <img class="profile__img-top" src="assets\images\yo2.jpg" alt="">
+            <img class="profile__img-bottom" src="assets\images\yo1.jpg" alt="">
+        </div>
+
+    </div>
 </div>
