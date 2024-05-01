@@ -1,0 +1,11 @@
+<div class="magnetic" (mousemove)="moveMagnet($event)" (mouseout)="resetMagnet($event)">
+    <button #magneticButton 
+            type="button" 
+            class="btn btn-outline-primary magnet-button" 
+            [ngStyle]="{'padding-right': horizontalPadding, 
+            'padding-left': horizontalPadding, 
+            'padding-top': verticalPadding, 
+            'padding-bottom': verticalPadding}">
+            {{ text }}
+    </button>
+</div>

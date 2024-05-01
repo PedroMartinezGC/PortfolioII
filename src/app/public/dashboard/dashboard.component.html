@@ -1,8 +1,8 @@
-<div class="dashboard" (click)="isMenuOpened ? toggleDropdownMenu() : ''">
-    
+<div class="dashboard" id="luxy" (click)="isMenuOpened ? toggleDropdownMenu() : ''">
+
     <!-- NAVIGATION MENU -->
     <div class="nav-menu d-flex w-100 justify-content-start" #navMenu>
-        
+
         <!-- Menu left: Logo / skills -->
         <div class="nav-menu__left h-100 d-flex align-items-center justify-content-between gap-4">
             <div class="d-flex align-items-center justify-content-between gap-4">
@@ -16,18 +16,19 @@
                 </div>
             </div>
             <div *ngIf="showMobileMenu">
-                <pf-hamburguer-button #hamburguerButton mainColor="#f6ebe5" hoverColor="#f6ebe5" id="menuDropdown" (click)="isMenuOpened ? '' : toggleDropdownMenu()"></pf-hamburguer-button>
+                <pf-hamburguer-button #hamburguerButton mainColor="#f6ebe5" hoverColor="#f6ebe5" id="menuDropdown"
+                    (click)="isMenuOpened ? '' : toggleDropdownMenu()"></pf-hamburguer-button>
             </div>
         </div>
 
         <!-- Menu right:  Projects / About me / contact-->
         <nav class="nav-menu__right body-sm h-100">
             <div>
-                <a href="" class="p-4">Projects</a>
-                <a href="" class="p-4">About me</a>
+                <a class="p-4">Projects</a>
+                <a class="p-4" (click)="scrollToSection(pageSectionsEnum.Experience)">About me</a>
             </div>
             <div>
-                <a href="" class="contact-link p-4 h-100">Contact</a>
+                <a class="contact-link p-4 h-100" (click)="scrollToSection(pageSectionsEnum.Contact)">Contact</a>
             </div>
         </nav>
     </div>
@@ -35,50 +36,43 @@
     <!-- DROPDOWN MENU (MOBILE) -->
     <div class="menu-dropdown d-flex flex-column w-100" #menuDropdown *ngIf="showMobileMenu ">
         <div class="menu-dropdown__section title-xs d-flex align-items-center"><span class="ms-3">Projects</span></div>
-        <div class="menu-dropdown__section title-xs d-flex align-items-center"><span class="ms-3">About me</span></div>
-        <div class="menu-dropdown__section title-xs d-flex align-items-center"><span class="ms-3">Contact</span></div>
+        <div class="menu-dropdown__section title-xs d-flex align-items-center"
+            (click)="scrollToSection(pageSectionsEnum.Experience)"><span class="ms-3">About me</span></div>
+        <div class="menu-dropdown__section title-xs d-flex align-items-center"
+            (click)="scrollToSection(pageSectionsEnum.Contact)"><span class="ms-3">Contact</span></div>
     </div>
 
     <!-- CONTENT -->
     <div class="dashboard__content">
 
         <!-- HEADER SECTION -->
-        <div id="header-section">
-            <div class="header-image">
-                <img src="assets\images\ryoji-iwata.jpg" alt="">
-            </div>
-
-            <div class="header-slider">
-                <div #sliderTopBox class="header-slider__top">
-                    <div #slideTop class="slide">
-                        <h1>PEDRO</h1>
-                        <h1>DEV</h1>
-                        <h1>CICUENDEZ</h1>
-                        <h1>PEDRO</h1>
-                        <h1>DEV</h1>
-                        <h1>CICUENDEZ</h1>
-                    </div>
+        <div class="header">
+            <div class="header-section">
+                <div class="header-image">
+                    <img src="assets\images\ryoji-iwata.jpg" alt="">
                 </div>
-                <div #sliderBottomBox class="header-slider__bottom">
-                    <div #slideBottom class="slide">
-                        <h1>GRANDE</h1>
-                        <h1>MARTINEZ</h1>
-                        <h1>FRONTEND</h1>
-                        <h1>GRANDE</h1>
-                        <h1>MARTINEZ</h1>
-                        <h1>FRONTEND</h1>
+
+                <div class="header-slider">
+                    <div class="header-slider__top">
+                        <pf-infinite-marquee [text]="'PEDRO DEV CICUENDEZ'" [fontFamily]="'Federo'"
+                            [speed]="0.1"></pf-infinite-marquee>
+                    </div>
+                    <div class="header-slider__bottom">
+                        <pf-infinite-marquee [text]="'FRONTEND GRANDE MARTINEZ'" [fontFamily]="'Federo'"
+                            [speed]="0.1"></pf-infinite-marquee>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- ABOUT ME -->
-        <div class="about-me">
+        <div class="about-me important-message">
             <div>
-                <span class="body-md about-me__title">humility time</span>
+                <span class="body-md important-message__title">humility time</span>
             </div>
             <div>
-                <span class="about-me__description">Appassionate young FrontEnd developer, designer and engineer. Improving for beauty and dynamism.</span>
+                <span class="important-message__description">Appassionate young FrontEnd developer, designer and
+                    engineer. Improving for beauty and dynamism.</span>
             </div>
         </div>
 
@@ -88,18 +82,20 @@
         <div class="profile">
             <span class="profile__title">KNOW THE CREATOR</span>
             <p class="profile__description1">
-                Frontend Developer specialist in Angular. A very interested person in web/app development. 
-                Using dynamically JavaScript, Angular and Ionic for the bones, and Figma and Webflow for an impressive beauty face.
+                Frontend Developer specialist in Angular. A very interested person in web/app development.
+                Using dynamically JavaScript, Angular and Ionic for the bones, and Figma and Webflow for an impressive
+                beauty face.
             </p>
             <p class="profile__description2">
-                I have spent a year in other country and I have been in contact with all kinds of people, so mobility outside the country will not be a problem.
+                I have spent a year in other country and I have been in contact with all kinds of people, so mobility
+                outside the country will not be a problem.
             </p>
             <img class="profile__img-top" src="assets\images\yo2.jpg" alt="">
             <img class="profile__img-bottom" src="assets\images\yo1.jpg" alt="">
         </div>
 
         <!-- EXPERIENCE -->
-        <div class="experience">
+        <div #experienceSection class="experience">
             <div class="experience__row d-flex justify-content-around">
                 <div class="experience__section">
                     <h3 class="mb-4">ACADEMIC PROFILE</h3>
@@ -120,7 +116,7 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <div class="experience__section">
                     <h3 class="mb-4">MORE EDUCATION</h3>
                     <div class="d-flex">
@@ -152,7 +148,8 @@
                             </div>
                             <div class="subsection">
                                 <h4 class="body-md">Frontend Developer in ORENES</h4>
-                                <span>Web and apps development with Angular in latest versions. Continuous integration, collaborating with several depts. (Back, QA, DevOps). Working in sprints.</span>
+                                <span>Web and apps development with Angular in latest versions. Continuous integration,
+                                    collaborating with several depts. (Back, QA, DevOps). Working in sprints.</span>
                                 <span>March 2023 - Now</span>
                                 <span>100% remote.</span>
                             </div>
@@ -216,5 +213,57 @@
             </div>
         </div>
 
+        <!-- CONTACT -->
+        <div class="contact">
+
+            <!-- Slider section -->
+            <div class="header-section">
+                <div class="header-image">
+                    <img src="assets\images\ryoji-iwata-footer.jpg" alt="">
+                </div>
+
+                <div class="header-slider">
+                    <div class="header-slider__top">
+                        <pf-infinite-marquee [text]="'CALL MY DOOR CONTACT ME'" [fontFamily]="'Federo'"
+                            [speed]="0.1"></pf-infinite-marquee>
+                    </div>
+                    <div class="header-slider__bottom">
+                        <pf-infinite-marquee [text]="'CONTACT ME CALL MY DOOR'" [fontFamily]="'Federo'"
+                            [speed]="0.1"></pf-infinite-marquee>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Business time -->
+            <div #contactSection class="contact-data">
+                <div class="important-message">
+                    <div>
+                        <span class="body-md important-message__title">business time</span>
+                    </div>
+                    <div>
+                        <span class="important-message__description">Ask me, and lets talk about intersting
+                            projects!</span>
+                    </div>
+                </div>
+
+                <div class="link-section">
+                    <div>
+                        <span>pedromartinezgcicuendez&#64;gmail.com</span>
+                        <span>Phone: +34 658 059 750</span>
+                        <span class="no-hover">Madrid, Spain</span>
+                    </div>
+                    <div>
+                        <span>LinkedIn</span>
+                        <span>GitHub</span>
+                    </div>
+                </div>
+            </div>
+            <div class="send-message-button">
+                <pf-magnetic-button [text]="'Send a message'"></pf-magnetic-button>
+            </div>
+        </div>
+
     </div>
+    <!-- GO UP BUTTON -->
+    <div class="go-up" (click)="scrollToTop()">Go up</div>
 </div>

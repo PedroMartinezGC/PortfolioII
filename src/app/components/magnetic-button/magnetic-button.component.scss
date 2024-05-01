@@ -1,0 +1,23 @@
+@import '../../../assets/themes/variables.scss';
+ 
+ .magnetic {
+    padding: 30px;
+    display: inline-block;
+    border-radius: 50%;
+    font-family: 'Poppins';
+}
+
+.magnet-button {
+    background-color: transparent;
+    color: $primary;
+    border-radius: 50%;
+    border: 1px solid $primary;
+    cursor: pointer;
+    transition: 300ms ease-in;
+}
+
+.magnet-button:hover {
+    color: black;
+    border-color: transparent;
+    background-color: $secondary;
+}
