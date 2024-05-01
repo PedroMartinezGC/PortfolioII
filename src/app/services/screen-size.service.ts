@@ -36,12 +36,10 @@ export class ScreenSizeService {
   }
 
   setScreenSize() {
-    console.log('hola')
     const screenWidth = this.platform.isBrowser ? window.innerWidth : null;
 
     if (screenWidth) {
       const mediaDevice = this.isSmallDevice(screenWidth) ? ScreenSizeEnum.Mobile : this.isMediumDevice(screenWidth) ? ScreenSizeEnum.Tablet : ScreenSizeEnum.Desktop;
-      console.log(mediaDevice)
       this.mediaDeviceSubject.next(mediaDevice);
     }
   }

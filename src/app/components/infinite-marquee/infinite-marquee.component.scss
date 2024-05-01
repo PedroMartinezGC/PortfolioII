@@ -1,0 +1,29 @@
+@import '../../../assets/themes/variables.scss';
+
+.infinite-marquee {
+    * {
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        min-height: 400vh;
+        /* force some scrollbars */
+    }
+
+    .hero-section {
+        position: relative;
+        overflow: hidden;
+        font-size: $title-xl;
+    }
+
+    @media screen and (max-width: $media-md) {
+        .hero-section {
+            font-size: $title-lg;
+        }
+    }
+
+    @media screen and (max-width: $media-sm) {
+        font-size: 80px;
+    }
+}
