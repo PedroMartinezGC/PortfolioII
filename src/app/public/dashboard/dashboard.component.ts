@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { HamburguerButtonComponent } from '../../components/hamburguer-button/hamburguer-button.component';
 import { ScreenSizeEnum, ScreenSizeService } from '../../services/screen-size.service';
 import { NgIf } from '@angular/common';
@@ -24,11 +24,19 @@ export class DashboardComponent implements OnInit {
 	showMobileMenu: boolean = false;
 	pageSectionsEnum = PageSectionsEnum;
 
+	current = 0;
+	target  = 0;
+	ease    = .05;
+	sliderHeight: any;
+
+	@ViewChild('slider') slider: ElementRef;
 	@ViewChild('menuDropdown') menuDropdown: ElementRef;
 	@ViewChild('navMenu') navMenu: ElementRef;
 	@ViewChild('hamburguerButton') hamburguerButton: HamburguerButtonComponent;
 	@ViewChild('experienceSection') experienceSection: ElementRef;
 	@ViewChild('contactSection') contactSection: ElementRef;
+
+	@ViewChild('expandible') expandible: ElementRef;
 
 	constructor(private renderer2: Renderer2,
 		private screenSizeService: ScreenSizeService) {
@@ -38,7 +46,30 @@ export class DashboardComponent implements OnInit {
 		this.screenSizeService.mediaDevice$.subscribe((mediaDevice: ScreenSizeEnum) => {
 			this.showMobileMenu = mediaDevice === ScreenSizeEnum.Mobile || mediaDevice === ScreenSizeEnum.Tablet ? true : false;
 		});
+		this.renderer2.listen('window', 'load', () => {
+            this.initSlider();
+			//this.animateSmoothScroll();
+        })
 	}
+
+	animateSmoothScroll() {
+		this.target = window.scrollY;
+		this.current += (this.target - this.current) * this.ease;
+		this.setTransform(this.slider.nativeElement, `translateY(-${this.current}px)`);
+		requestAnimationFrame(() => this.animateSmoothScroll()); // Call recursively
+	  }
+	
+	  setTransform(el: HTMLElement, transform: any) {
+		this.renderer2.setStyle(el, 'transform', transform);
+	  }
+	
+	  initSlider() {
+		this.sliderHeight = this.slider.nativeElement.getBoundingClientRect().clientHeight;
+		document.body.style.height = `${this.sliderHeight - (window.innerHeight - window.innerWidth)}px`;
+		console.log(this.slider.nativeElement.getBoundingClientRect().clientHeight)
+		console.log(document.body.style.height)
+		console.log(this.sliderHeight)
+	  }
 
 	/**
 	 * Open and closes menu dropdown; When closes, it hides the dropdown under navMenu.
@@ -67,6 +98,7 @@ export class DashboardComponent implements OnInit {
 	}
 
 	scrollToSection(sectionEnum: PageSectionsEnum) {
+		console.log('scroll into section')
 		let section: any;
 		switch (sectionEnum) {
 			case PageSectionsEnum.Experience:

@@ -1,4 +1,4 @@
-<div class="dashboard" id="luxy" (click)="isMenuOpened ? toggleDropdownMenu() : ''">
+<div #slider class="dashboard" (click)="isMenuOpened ? toggleDropdownMenu() : ''">
 
     <!-- NAVIGATION MENU -->
     <div class="nav-menu d-flex w-100 justify-content-start" #navMenu>
@@ -35,10 +35,10 @@
 
     <!-- DROPDOWN MENU (MOBILE) -->
     <div class="menu-dropdown d-flex flex-column w-100" #menuDropdown *ngIf="showMobileMenu ">
-        <div class="menu-dropdown__section title-xs d-flex align-items-center"><span class="ms-3">Projects</span></div>
-        <div class="menu-dropdown__section title-xs d-flex align-items-center"
+        <div class="menu-dropdown__row title-xs d-flex align-items-center"><span class="ms-3">Projects</span></div>
+        <div class="menu-dropdown__row title-xs d-flex align-items-center"
             (click)="scrollToSection(pageSectionsEnum.Experience)"><span class="ms-3">About me</span></div>
-        <div class="menu-dropdown__section title-xs d-flex align-items-center"
+        <div class="menu-dropdown__row title-xs d-flex align-items-center"
             (click)="scrollToSection(pageSectionsEnum.Contact)"><span class="ms-3">Contact</span></div>
     </div>
 
@@ -96,8 +96,8 @@
 
         <!-- EXPERIENCE -->
         <div #experienceSection class="experience">
-            <div class="experience__row d-flex justify-content-around">
-                <div class="experience__section">
+            <div class="experience__row">
+                <div class="section">
                     <h3 class="mb-4">ACADEMIC PROFILE</h3>
                     <div class="d-flex">
                         <div class="guide-line"></div>
@@ -117,7 +117,7 @@
                     </div>
                 </div>
 
-                <div class="experience__section">
+                <div class="section">
                     <h3 class="mb-4">MORE EDUCATION</h3>
                     <div class="d-flex">
                         <div class="guide-line"></div>
@@ -134,8 +134,8 @@
                 </div>
             </div>
 
-            <div class="experience__row d-flex justify-content-around">
-                <div class="experience__section">
+            <div class="experience__row">
+                <div class="section">
                     <h3 class="mb-4">WORK EXPERIENCE</h3>
                     <div class="d-flex">
                         <div class="guide-line"></div>
@@ -162,7 +162,7 @@
                     </div>
                 </div>
 
-                <div class="experience__section">
+                <div class="section">
                     <h3 class="mb-4">SKILLS</h3>
                     <div class="d-flex">
                         <div class="guide-line"></div>
@@ -249,7 +249,6 @@
                 <div class="link-section">
                     <div>
                         <span>pedromartinezgcicuendez&#64;gmail.com</span>
-                        <span>Phone: +34 658 059 750</span>
                         <span class="no-hover">Madrid, Spain</span>
                     </div>
                     <div>

@@ -10,6 +10,8 @@
         background-color: transparent;
         border-bottom: 1px solid $primary;
         background-color: $background;
+        position: absolute;
+        z-index: 3;
 
         &__right {
             border-left: 1px solid $primary;
@@ -91,7 +93,7 @@
         height: 140px;
         top: -70px;
         position: absolute;
-        z-index: -1;
+        z-index: 2;
         overflow: hidden;
         transition: top 300ms ease-in;
 
@@ -211,7 +213,7 @@
         }
 
         .experience {
-            padding: 200px 150px 250px 150px;
+            padding: 200px 80px 250px 80px;
 
             h3 {
                 font-family: 'PoppinsLight';
@@ -250,10 +252,12 @@
 
             &__row {
                 padding-bottom: 80px;
-            }
+                display: flex;
+                justify-content: space-between;
 
-            &__section {
-                max-width: 440px;
+                .section {
+                    width: 50%;
+                }
             }
         }
 
@@ -444,7 +448,12 @@
             padding-right: 60px;
 
             &__row {
-                gap: 80px;
+                display: flex;
+                justify-content: space-around;
+
+                .section {
+                    width: auto;
+                }
             }
         }
 
