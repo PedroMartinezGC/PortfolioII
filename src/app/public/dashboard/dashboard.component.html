@@ -16,7 +16,7 @@
                 </div>
             </div>
             <div *ngIf="showMobileMenu">
-                <pf-hamburguer-button #hamburguerButton mainColor="#f6ebe5" hoverColor="#f6ebe5" id="menuDropdown"
+                <pf-hamburguer-button #hamburguerButton id="menuDropdown"
                     (click)="isMenuOpened ? '' : toggleDropdownMenu()"></pf-hamburguer-button>
             </div>
         </div>
@@ -44,12 +44,15 @@
 
     <!-- CONTENT -->
     <div class="dashboard__content">
+        <div class="theme-button">
+            <pf-toggle-button (onToggle)="onToggleThemeButton($event)"></pf-toggle-button>
+        </div>
 
         <!-- HEADER SECTION -->
         <div class="header">
             <div class="header-section">
                 <div class="header-image">
-                    <img src="assets\images\ryoji-iwata.jpg" alt="">
+                    <img [src]="imageMain" alt="">
                 </div>
 
                 <div class="header-slider">
@@ -76,8 +79,6 @@
             </div>
         </div>
 
-        <!-- PROJECTS -->
-
         <!-- PROFILE -->
         <div class="profile">
             <span class="profile__title">KNOW THE CREATOR</span>
@@ -90,8 +91,8 @@
                 I have spent a year in other country and I have been in contact with all kinds of people, so mobility
                 outside the country will not be a problem.
             </p>
-            <img class="profile__img-top" src="assets\images\yo2.jpg" alt="">
-            <img class="profile__img-bottom" src="assets\images\yo1.jpg" alt="">
+            <img class="profile__img-top" [src]="imageMiddle2" alt="">
+            <img class="profile__img-bottom" [src]="imageMiddle1" alt="">
         </div>
 
         <!-- EXPERIENCE -->
@@ -213,13 +214,17 @@
             </div>
         </div>
 
+        <!-- PROJECTS -->
+        <div class="projects">
+        </div>
+
         <!-- CONTACT -->
         <div class="contact">
 
             <!-- Slider section -->
             <div class="header-section">
                 <div class="header-image">
-                    <img src="assets\images\ryoji-iwata-footer.jpg" alt="">
+                    <img [src]="imageFooter" alt="">
                 </div>
 
                 <div class="header-slider">

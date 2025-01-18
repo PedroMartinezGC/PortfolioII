@@ -1,11 +1,18 @@
 
+:root {
+    /* COLORS - Defined as CSS variables for change it value on light/dark theme */
+    --primary: #f6ebe5;
+    --secondary: #dbc53a;
+    --background: #000;
+    --background-light: #2c2b2b;
+    --dark-light: #9c8e8e;
+}
 
-/* COLORS */
-$primary: #f6ebe5;
-$secondary: #dbc53a;
-$background: #000;
-$backgroud-light: #2c2b2b;
-$dark-light: #9c8e8e;
+$primary: var(--primary);
+$secondary: var(--secondary);
+$background: var(--background);
+$background-light: var(--background-light);
+$dark-light: var(dark-light);
 
 /* FONT SIZES */
 $body-xs: 12px;
@@ -21,7 +28,6 @@ $title-lg: 108px;
 $title-xl: 135px;
 
 /* MEDIA QUERY */
-
 $media-sm: 576px;
 $media-md: 768px;
 $media-lg: 992px;
