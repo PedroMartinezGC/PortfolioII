@@ -1,0 +1,66 @@
+@import '../../../assets/themes/variables.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.toggle-btn {
+    width: 73px;
+    height: 31px;
+    background-color: $secondary;
+    border-radius: 30px;
+    padding: 3px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+
+    span {
+        color: $background;
+        position: absolute;
+        top: 6px;
+    }
+    .inactive-label {
+        transition: opacity 0.3s ease-in-out;
+        opacity: 1;
+        right: 10px;
+    }
+    .active-label {
+        transition: opacity 0.3s ease-in-out;
+        opacity: 0;
+        left: 10px;
+    }
+}
+
+.toggle-btn:hover {
+    cursor: pointer;
+}
+
+.toggle-btn>.inner-circle {
+    width: 25px;
+    height: 25px;
+    background-color: $background;
+    border-radius: 50%;
+    transition: all 300ms ease-in-out;
+}
+
+.toggle-btn.active {
+    background-color: $secondary;
+
+    .inactive-label {
+        opacity: 0;
+    }
+    .active-label {
+        opacity: 1;        
+    }
+}
+
+.toggle-btn.active>.inner-circle {
+    margin-left: 42px;
+}

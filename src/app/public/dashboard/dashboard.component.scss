@@ -10,6 +10,8 @@
         background-color: transparent;
         border-bottom: 1px solid $primary;
         background-color: $background;
+        position: absolute;
+        z-index: 3;
 
         &__right {
             border-left: 1px solid $primary;
@@ -67,31 +69,15 @@
                     }
                     
             }
-            .hamburguer-button:hover {
-                .segment-top {
-                    bottom: 50%;
-                    transform: rotate(45deg);
-                    background-color: $secondary;
-                }
-                .segment-middle {
-                    height: 0;
-                    background-color: $secondary;
-                }
-                .segment-bottom {
-                    bottom: 50%;
-                    transform: rotate(-45deg);
-                    background-color: $secondary;
-                }
-            }
         }
     }
 
     .menu-dropdown {
-        background-color: $backgroud-light;
+        background-color: $background-light;
         height: 140px;
         top: -70px;
         position: absolute;
-        z-index: -1;
+        z-index: 2;
         overflow: hidden;
         transition: top 300ms ease-in;
 
@@ -107,7 +93,7 @@
         .header {
             .header-section {
                 position: relative;
-                padding: 100px 0 100px 0;
+                margin: 100px 0 100px 0;
                 height: 600px;
                 font-size: $title-xl !important;
     
@@ -118,7 +104,7 @@
     
                     img {
                         height: auto;
-                        width: 400px;
+                        width: 410px;
                         position: absolute;
                         z-index: -5;
                     }
@@ -142,6 +128,14 @@
                     }
                 }
             }
+        }
+
+        .theme-button {
+            position: relative;
+            margin-right: 18px;
+            top: 84px;
+            display: flex;
+            justify-content: flex-end;
         }
 
         .about-me {
@@ -211,7 +205,7 @@
         }
 
         .experience {
-            padding: 200px 150px 250px 150px;
+            padding: 200px 80px 250px 80px;
 
             h3 {
                 font-family: 'PoppinsLight';
@@ -250,17 +244,19 @@
 
             &__row {
                 padding-bottom: 80px;
-            }
+                display: flex;
+                justify-content: space-between;
+                gap: 100px;
 
-            &__section {
-                max-width: 440px;
+                .section {
+                    width: 50%;
+                }
             }
         }
 
         .contact {
             .header-section {
                 position: relative;
-                padding: 100px 0 100px 0;
     
                 .header-image {
                     img {
@@ -288,7 +284,7 @@
             }
 
             .contact-data {
-                padding-left: 80px;
+                padding: 100px 0px 0px 80px;
 
                 .important-message {
                     margin: unset;
@@ -369,10 +365,6 @@
             span {
                 font-size: $body-sm;
             }
-
-            &__row {
-                gap: 100px;
-            }
         }
     }
 
@@ -381,7 +373,6 @@
         .header {
             .header-section {
                 position: relative;
-                padding: 100px 0 100px 0;
     
                 .header-image {
                     img {
@@ -444,13 +435,18 @@
             padding-right: 60px;
 
             &__row {
-                gap: 80px;
+                display: flex;
+                justify-content: space-around;
+
+                .section {
+                    width: auto;
+                }
             }
         }
 
         .contact {
             .contact-data {
-                padding-left: 60px;
+                padding: 100px 0px 0px 60px;
     
                 .link-section {
                     span {
@@ -480,7 +476,6 @@
         .header {
             .header-section {
                 position: relative;
-                padding: 100px 0 100px 0;
     
                 .header-image {
                     img {
@@ -551,7 +546,7 @@
             }
 
             .contact-data {
-                padding-left: 60px;
+                padding-left: 100px 0px 0px 60px;
     
                 .link-section {
                     flex-direction: column;
@@ -601,8 +596,7 @@
         .header {
             .header-section {
                 position: relative;
-                padding: 60px 0 100px 0;
-                height: 550px;
+                height: 350px;
     
                 .header-image {
                     img {
