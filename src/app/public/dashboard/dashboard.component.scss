@@ -7,7 +7,6 @@
     
     .nav-menu {
         height: 70px; 
-        background-color: transparent;
         border-bottom: 1px solid $primary;
         background-color: $background;
         position: absolute;
@@ -130,12 +129,78 @@
             }
         }
 
-        .theme-button {
+        .config-buttons {
             position: relative;
-            margin-right: 18px;
             top: 84px;
             display: flex;
-            justify-content: flex-end;
+            justify-content: space-between;
+
+            .lang-box {
+                position: relative;
+                margin-left: 18px;
+                width: 120px;
+                display: inline-block;
+
+                .lang-button {
+                    width: auto;
+                    height: calc(100px / 3);
+                    background-color: $background;
+                    transition: background-color 200ms ease-in-out;
+                    display: flex;
+                    padding: 0px 8px 0px 8px;
+                    justify-content: space-between;
+                    align-items: center;
+                    gap: 10px;
+
+                    img {
+                        width: 30px;
+                        height: auto;
+                    }
+                }
+
+                .lang-button:hover {
+                    cursor: pointer;
+                    background-color: $background-light;
+                }
+
+                .lang-popover-dropdown {
+                    width: 130px;
+                    background-color: $background;
+                    height: 0px;
+                    position: absolute;
+                    z-index: 2;
+                    overflow: hidden;
+                    transition: all 300ms ease-in;
+            
+                    &__row {
+                        display: flex;
+                        height: 50%;
+                        justify-content: flex-start;
+                        align-items: center;
+                        transition: margin 180ms ease-in;
+                        padding: 0px 8px 0px 8px;
+
+                        span {
+                            display: inline-block;
+                            width: 56px;
+                            margin-right: 10px;
+                        }
+
+                        img {
+                            width: 30px;
+                            height: auto;
+                        }
+                    }
+                    &__row:hover {
+                        cursor: pointer;
+                        margin-left: 8px;
+                    }
+                }
+            }
+
+            .theme-button {
+                margin-right: 18px;
+            }
         }
 
         .about-me {
@@ -484,6 +549,15 @@
                 }
                 .header-slider {
                     height: 350px;
+                }
+            }
+        }
+
+        .config-buttons {
+            .lang-box {
+                .lang-button:hover {
+                    cursor: pointer;
+                    background-color: $background;
                 }
             }
         }

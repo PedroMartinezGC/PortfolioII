@@ -1,0 +1,90 @@
+{
+    "common": {
+        "intermediate": "Intermedio",
+        "advanced": "Avanzado",
+        "intermediateHigh": "Int. - Avanzado",
+        "lang": {
+            "es": "Español",
+            "en": "Inglés",
+            "de": "Alemán"
+        }
+    },
+    "menu": {
+        "brand": {
+            "first": "GRANDE",
+            "last": "DEV",
+            "js": "JavaScript",
+            "frontend": "Desarrollador Frontend",
+            "angular": "Angular"
+        },
+        "sections": {
+            "projects": "Proyectos",
+            "aboutMe": "Sobre mí",
+            "contact": "Contacto"
+        }
+    },
+    "aboutMe": {
+        "title": "Tiempo de humildad",
+        "description": "Ingeniero y desarrollador Frontend. Creando y mejorando la lógica y estética del software."
+    },
+    "profile": {
+        "title": "CONOCE AL CREADOR",
+        "description1": "Desarrollador Frontend especializado en Angular. Persona muy interesada en el desarrollo de aplicaciones web. Uso JavaScript, Angular e Ionic como herramienta principal, y Figma y SCSS para el diseño y maquetación.",
+        "description2": "He pasado un año en el extranjero y he estado en contacto con todo tipo de personas, así que la movilidad fuera del país no será un problema."
+    },
+    "experience": {
+        "academicProfile": {
+            "title": "PERFIL ACADÉMICO",
+            "subsection1": {
+                "place": "Universidad de Castilla-La Mancha",
+                "studies": "Graduado en Ingeniería Mecánica"
+            },
+            "subsection2": {
+                "place": "Universidad de Perugia",
+                "studies": "Formación complementaria para ingeniería",
+                "course": "Curso 2019-2020"
+            }
+        },
+        "moreEducation": {
+            "title": "MÁS FORMACIÓN",
+            "subsection1": "Curso intensivo de inglés (UIMP)",
+            "subsection2": "Erasmus +",
+            "subsection3": "Máster en JavaScript: JS, JQuery, Angular, NodeJS",
+            "subsection4": "Ionic 6+: Creación de apps iOS, Android y PWAs con Angular",
+            "subsection5": "Principios SOLID y Código Limpio"
+        },
+        "workExperience": {
+            "title": "EXPERIENCIA LABORAL",
+            "subsection1": {
+                "title": "Desarrollador Frontend en OPTIMIZA Process",
+                "description": "Desarrollo de webs y apps con Ionic + Angular",
+                "time": "Marzo 2022 - Enero 2023",
+                "modality": "100% remoto."
+            },
+            "subsection2": {
+                "title": "Desarrollador Frontend en ORENES",
+                "description": "Desarrollo de webs y apps con Angular en las versiones más recientes. Integración continua, colaborando con varios departamentos (Back, QA, DevOps). Trabajo en sprints.",
+                "time": "Marzo 2023 - Ahora",
+                "modality": "100% remoto."
+            },
+            "subsection3": {
+                "title": "Programador en proyectos propios",
+                "description": "Desarrollo web, frontend",
+                "time": "2021-Ahora"
+            }
+        },
+        "skills": {
+            "title": "HABILIDADES",
+            "entity": {
+                "english": "Inglés",
+                "italian": "Italiano",
+                "spanish": "Español"
+            }
+        }
+    },
+    "contact": {
+        "title": "Tiempo de negocios",
+        "description": "¡Pregúntame y hablemos de proyectos interesantes!",
+        "location": "Madrid, España"
+    }
+}

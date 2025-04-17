@@ -1,0 +1,90 @@
+{
+    "common": {
+        "intermediate": "Intermediate",
+        "advanced": "Advanced",
+        "intermediateHigh": "Int. - Advanced",
+        "lang": {
+            "es": "Spanish",
+            "en": "English",
+            "de": "German"
+        }
+    },
+    "menu": {
+        "brand": {
+            "first": "GRANDE",
+            "last": "DEV",
+            "js": "JavaScript",
+            "frontend": "Frontend developer",
+            "angular": "Angular"
+        },
+        "sections": {
+            "projects": "Projects",
+            "aboutMe": "About me",
+            "contact": "Contact"
+        }
+    },
+    "aboutMe": {
+        "title": "humility time",
+        "description": "Appassionate young engineer, FrontEnd developer and designer. Improving for beauty and dynamism."
+    },
+    "profile": {
+        "title": "KNOW THE CREATOR",
+        "description1": "Frontend Developer specialist in Angular. A very interested person in web/app development. Using dynamically JavaScript, Angular and Ionic for the bones, and Figma and Webflow for an impressive beauty face.",
+        "description2": "I have spent a year in other country and I have been in contact with all kinds of people, so mobility outside the country will not be a problem."
+    },
+    "experience": {
+        "academicProfile": {
+            "title": "ACADEMIC PROFILE",
+            "subsection1": {
+                "place": "University of Castilla-La Mancha",
+                "studies": "Graduate in Mechanical Engineering"
+            },
+            "subsection2": {
+                "place": "University of Perugia",
+                "studies": "Complementary education for engineerig",
+                "course": "Course 2019-2020"
+            }
+        },
+        "moreEducation": {
+            "title": "MORE EDUCATION",
+            "subsection1": "English immersion course (UIMP)",
+            "subsection2": "Erasmus +",
+            "subsection3": "Master in Javascript: JS, JQuery, Angular, NodeJS",
+            "subsection4": "Ionic 6+: Create IOS, Android PWAs apps with Angular",
+            "subsection5": "SOLID principles and Clean Code"
+        },
+        "workExperience": {
+            "title": "WORK EXPERIENCE",
+            "subsection1": {
+                "title": "Frontend Developer in OPTIMIZA Process",
+                "description": "Web and apps development with Ionic + Angular",
+                "time": "March 2022 - January 2023",
+                "modality": "100% remote."
+            },
+            "subsection2": {
+                "title": "Frontend Developer in ORENES",
+                "description": "Web and apps development with Angular in latest versions. Continuous integration, collaborating with several depts. (Back, QA, DevOps). Working in sprints.",
+                "time": "March 2023 - Now",
+                "modality": "100% remote."
+            },
+            "subsection3": {
+                "title": "Programmer in own projects",
+                "description": "Web development, frontend",
+                "time": "2021-Now"
+            }
+        },
+        "skills": {
+            "title": "SKILLS",
+            "entity": {
+                "english": "English",
+                "italian": "Italian",
+                "spanish": "Spanish"
+            }
+        }
+    },
+    "contact": {
+        "title": "business time",
+        "description": "Ask me, and lets talk about intersting projects!",
+        "location": "Madrid, Spain"
+    }
+}
