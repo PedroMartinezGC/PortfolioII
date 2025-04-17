@@ -1,0 +1,17 @@
+@import '../../../assets/themes/variables.scss';
+
+.popover {
+    position: absolute;
+    width: 80px;
+    height: 40px;
+    background-color: $background-light;
+    border-radius: 8px;
+    transition: height 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+    overflow: hidden;
+}
+
+.popover:hover {
+    cursor: pointer;
+    background-color: $dark-light;
+}

@@ -1,4 +1,4 @@
-<div #slider class="dashboard" (click)="isMenuOpened ? toggleDropdownMenu() : ''">
+<div #slider class="dashboard" (click)="closeDropdowns()">
 
     <!-- NAVIGATION MENU -->
     <div class="nav-menu d-flex w-100 justify-content-start" #navMenu>
@@ -7,12 +7,12 @@
         <div class="nav-menu__left h-100 d-flex align-items-center justify-content-between gap-4">
             <div class="d-flex align-items-center justify-content-between gap-4">
                 <div class="ms-3 body-sm">
-                    <span class="logo d-inline-block">GRANDE<span class="logo-shadow">DEV</span></span>
+                    <span class="logo d-inline-block">{{ 'menu.brand.first' | translate }}<span class="logo-shadow">{{ 'menu.brand.last' | translate }}</span></span>
                 </div>
                 <div class="d-flex flex-column">
-                    <span class="body-xs">JavaSript</span>
-                    <span class="body-xs">FrontEnd developer</span>
-                    <span class="body-xs">Angular</span>
+                    <span class="body-xs">{{ 'menu.brand.js' | translate }}</span>
+                    <span class="body-xs">{{ 'menu.brand.frontend' | translate }}</span>
+                    <span class="body-xs">{{ 'menu.brand.angular' | translate }}</span>
                 </div>
             </div>
             <div *ngIf="showMobileMenu">
@@ -24,35 +24,68 @@
         <!-- Menu right:  Projects / About me / contact-->
         <nav class="nav-menu__right body-sm h-100">
             <div>
-                <a class="p-4">Projects</a>
-                <a class="p-4" (click)="scrollToSection(pageSectionsEnum.Experience)">About me</a>
+                <a class="p-4">{{ 'menu.sections.projects' | translate }}</a>
+                <a class="p-4" (click)="scrollToSection(pageSectionsEnum.Experience)">{{ 'menu.sections.aboutMe' | translate }}</a>
             </div>
             <div>
-                <a class="contact-link p-4 h-100" (click)="scrollToSection(pageSectionsEnum.Contact)">Contact</a>
+                <a class="contact-link p-4 h-100" 
+                (click)="scrollToSection(pageSectionsEnum.Contact)">{{ 'menu.sections.contact' | translate }}</a>
             </div>
         </nav>
     </div>
 
     <!-- DROPDOWN MENU (MOBILE) -->
     <div class="menu-dropdown d-flex flex-column w-100" #menuDropdown *ngIf="showMobileMenu ">
-        <div class="menu-dropdown__row title-xs d-flex align-items-center"><span class="ms-3">Projects</span></div>
-        <div class="menu-dropdown__row title-xs d-flex align-items-center"
-            (click)="scrollToSection(pageSectionsEnum.Experience)"><span class="ms-3">About me</span></div>
-        <div class="menu-dropdown__row title-xs d-flex align-items-center"
-            (click)="scrollToSection(pageSectionsEnum.Contact)"><span class="ms-3">Contact</span></div>
+        <div class="menu-dropdown__row title-xs d-flex align-items-center">
+            <span class="ms-3">{{ 'menu.sections.projects' | translate }}</span>
+        </div>
+        <div class="menu-dropdown__row title-xs d-flex align-items-center" (click)="scrollToSection(pageSectionsEnum.Experience)">
+            <span class="ms-3">{{ 'menu.sections.aboutMe' | translate }}</span>
+        </div>
+        <div class="menu-dropdown__row title-xs d-flex align-items-center" (click)="scrollToSection(pageSectionsEnum.Contact)">
+            <span class="ms-3">{{ 'menu.sections.contact' | translate }}</span>
+        </div>
     </div>
 
     <!-- CONTENT -->
     <div class="dashboard__content">
-        <div class="theme-button">
-            <pf-toggle-button (onToggle)="onToggleThemeButton($event)"></pf-toggle-button>
+        <div class="config-buttons">
+            <div class="lang-box" (click)="toggleLangPopover()">
+                <div #langButton class="lang-button">
+                    <span>{{ 'common.lang.'+ selectedLang | translate }}</span>
+                    <img src="assets/images/countries/{{ selectedLang }}.png" alt="">
+                </div>
+                <div class="lang-popover-dropdown d-flex flex-column" #langPopover>
+                    @if (selectedLang !== translateLangsEnum.es) {
+                        <div class="lang-popover-dropdown__row title-xs" (click)="changeLang(translateLangsEnum.es)">
+                            <span>Spanish</span>
+                            <img src="assets/images/countries/es.png" alt="">
+                        </div>
+                    }
+                    @if (selectedLang !== translateLangsEnum.en) {
+                        <div class="lang-popover-dropdown__row title-xs" (click)="changeLang(translateLangsEnum.en)">
+                            <span>English</span>
+                            <img src="assets/images/countries/en.png" alt="">
+                        </div>
+                    }
+                    @if (selectedLang !== translateLangsEnum.de) {
+                        <div class="lang-popover-dropdown__row title-xs" (click)="changeLang(translateLangsEnum.de)">
+                            <span>German</span>
+                            <img src="assets/images/countries/de.png" alt="">
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="theme-button">
+                <pf-toggle-button (onToggle)="onToggleThemeButton($event)"></pf-toggle-button>
+            </div>
         </div>
 
         <!-- HEADER SECTION -->
         <div class="header">
             <div class="header-section">
                 <div class="header-image">
-                    <img [src]="imageMain" alt="">
+                    <img [src]="images.imageMain" alt="">
                 </div>
 
                 <div class="header-slider">
@@ -71,47 +104,40 @@
         <!-- ABOUT ME -->
         <div class="about-me important-message">
             <div>
-                <span class="body-md important-message__title">humility time</span>
+                <span class="body-md important-message__title">{{ 'aboutMe.title' | translate }}</span>
             </div>
             <div>
-                <span class="important-message__description">Appassionate young FrontEnd developer, designer and
-                    engineer. Improving for beauty and dynamism.</span>
+                <span class="important-message__description">{{ 'aboutMe.description' | translate }}</span>
             </div>
         </div>
 
         <!-- PROFILE -->
         <div class="profile">
-            <span class="profile__title">KNOW THE CREATOR</span>
-            <p class="profile__description1">
-                Frontend Developer specialist in Angular. A very interested person in web/app development.
-                Using dynamically JavaScript, Angular and Ionic for the bones, and Figma and Webflow for an impressive
-                beauty face.
-            </p>
-            <p class="profile__description2">
-                I have spent a year in other country and I have been in contact with all kinds of people, so mobility
-                outside the country will not be a problem.
-            </p>
-            <img class="profile__img-top" [src]="imageMiddle2" alt="">
-            <img class="profile__img-bottom" [src]="imageMiddle1" alt="">
+            <span class="profile__title">{{ 'profile.title' | translate }}</span>
+            <p class="profile__description1">{{ 'profile.description1' | translate }}</p>
+            <p class="profile__description2">{{ 'profile.description2' | translate }}</p>
+
+            <img class="profile__img-top" [src]="images.imageMiddle2" alt="">
+            <img class="profile__img-bottom" [src]="images.imageMiddle1" alt="">
         </div>
 
         <!-- EXPERIENCE -->
         <div #experienceSection class="experience">
             <div class="experience__row">
                 <div class="section">
-                    <h3 class="mb-4">ACADEMIC PROFILE</h3>
+                    <h3 class="mb-4">{{ 'experience.academicProfile.title' | translate }}</h3>
                     <div class="d-flex">
                         <div class="guide-line"></div>
                         <div>
                             <div class="subsection">
-                                <h4 class="body-md">University of Castilla-La Mancha</h4>
-                                <span>Graduate in Mechanical Engineering</span>
+                                <h4 class="body-md">{{ 'experience.academicProfile.subsection1.place' | translate }}</h4>
+                                <span>{{ 'experience.academicProfile.subsection1.studies' | translate }}</span>
                                 <span>2016-2021</span>
                             </div>
                             <div class="subsection">
-                                <h4 class="body-md">University of Perugia</h4>
-                                <span>Complementary education for engineerig.</span>
-                                <span>Course 2019-2020</span>
+                                <h4 class="body-md">{{ 'experience.academicProfile.subsection2.place' | translate }}</h4>
+                                <span>{{ 'experience.academicProfile.subsection2.studies' | translate }}</span>
+                                <span>{{ 'experience.academicProfile.subsection2.course' | translate }}</span>
                                 <span>Erasmus +</span>
                             </div>
                         </div>
@@ -119,16 +145,16 @@
                 </div>
 
                 <div class="section">
-                    <h3 class="mb-4">MORE EDUCATION</h3>
+                    <h3 class="mb-4">{{ 'experience.moreEducation.title' | translate }}</h3>
                     <div class="d-flex">
                         <div class="guide-line"></div>
                         <div>
                             <div class="subsection">
-                                <span>English immersion course (UIMP)</span>
-                                <span>Erasmus +</span>
-                                <span>Master in Javascript: JS, JQuery, Angular, NodeJS</span>
-                                <span>Ionic 6+: Create IOS, Android PWAs apps with Angular</span>
-                                <span>SOLID principles and Clean Code</span>
+                                <span>{{ 'experience.moreEducation.subsection1' | translate }}</span>
+                                <span>{{ 'experience.moreEducation.subsection2' | translate }}</span>
+                                <span>{{ 'experience.moreEducation.subsection3' | translate }}</span>
+                                <span>{{ 'experience.moreEducation.subsection4' | translate }}</span>
+                                <span>{{ 'experience.moreEducation.subsection5' | translate }}</span>
                             </div>
                         </div>
                     </div>
@@ -137,56 +163,55 @@
 
             <div class="experience__row">
                 <div class="section">
-                    <h3 class="mb-4">WORK EXPERIENCE</h3>
+                    <h3 class="mb-4">{{ 'experience.workExperience.title' | translate }}</h3>
                     <div class="d-flex">
                         <div class="guide-line"></div>
                         <div>
                             <div class="subsection">
-                                <h4 class="body-md">Frontend Developer in OPTIMIZA Process</h4>
-                                <span>Web and apps development with Ionic + Angular</span>
-                                <span>March 2022 - January 2023</span>
-                                <span>100% remote.</span>
+                                <h4 class="body-md">{{ 'experience.workExperience.subsection1.title' | translate }}</h4>
+                                <span>{{ 'experience.workExperience.subsection1.description' | translate }}</span>
+                                <span>{{ 'experience.workExperience.subsection1.time' | translate }}</span>
+                                <span>{{ 'experience.workExperience.subsection1.modality' | translate }}</span>
                             </div>
                             <div class="subsection">
-                                <h4 class="body-md">Frontend Developer in ORENES</h4>
-                                <span>Web and apps development with Angular in latest versions. Continuous integration,
-                                    collaborating with several depts. (Back, QA, DevOps). Working in sprints.</span>
-                                <span>March 2023 - Now</span>
-                                <span>100% remote.</span>
+                                <h4 class="body-md">{{ 'experience.workExperience.subsection2.title' | translate }}</h4>
+                                <span>{{ 'experience.workExperience.subsection2.description' | translate }}</span>
+                                <span>{{ 'experience.workExperience.subsection2.time' | translate }}</span>
+                                <span>{{ 'experience.workExperience.subsection2.modality' | translate }}</span>
                             </div>
                             <div class="subsection">
-                                <h4 class="body-md">Programmer in own projects</h4>
-                                <span>Web development, frontend</span>
-                                <span>2021-Now</span>
+                                <h4 class="body-md">{{ 'experience.workExperience.subsection3.title' | translate }}</h4>
+                                <span>{{ 'experience.workExperience.subsection3.description' | translate }}</span>
+                                <span>{{ 'experience.workExperience.subsection3.time' | translate }}</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="section">
-                    <h3 class="mb-4">SKILLS</h3>
+                    <h3 class="mb-4">{{ 'experience.skills.title' | translate }}</h3>
                     <div class="d-flex">
                         <div class="guide-line"></div>
                         <div>
                             <div class="subsection-skills">
                                 <h4 class="body-md d-inline-block">JavaScript</h4>
-                                <span class="d-inline-block">Advanced</span>
+                                <span class="d-inline-block">{{ 'common.advanced' | translate }}</span>
                             </div>
                             <div class="subsection-skills">
                                 <h4 class="body-md d-inline-block">Angular</h4>
-                                <span class="d-inline-block">Int. - Advanced</span>
+                                <span class="d-inline-block">{{ 'common.intermediateHigh' | translate }}</span>
                             </div>
                             <div class="subsection-skills">
                                 <h4 class="body-md d-inline-block">Ionic</h4>
-                                <span class="d-inline-block">Advanced</span>
+                                <span class="d-inline-block">{{ 'common.advanced' | translate }}</span>
                             </div>
                             <div class="subsection-skills">
-                                <h4 class="body-md d-inline-block">English</h4>
-                                <span class="d-inline-block">Advanced</span>
+                                <h4 class="body-md d-inline-block">{{ 'experience.skills.entity.english' | translate }}</h4>
+                                <span class="d-inline-block">{{ 'common.advanced' | translate }}</span>
                             </div>
                             <div class="subsection-skills">
-                                <h4 class="body-md d-inline-block">Italian</h4>
-                                <span class="d-inline-block">Intermediate</span>
+                                <h4 class="body-md d-inline-block">{{ 'experience.skills.entity.italian' | translate }}</h4>
+                                <span class="d-inline-block">{{ 'common.intermediate' | translate }}</span>
                             </div>
                             <div class="subsection-skills color-secondary">
                                 <span class="body-md d-inline-block">Bitbucket</span>
@@ -224,7 +249,7 @@
             <!-- Slider section -->
             <div class="header-section">
                 <div class="header-image">
-                    <img [src]="imageFooter" alt="">
+                    <img [src]="images.imageFooter" alt="">
                 </div>
 
                 <div class="header-slider">
@@ -243,18 +268,17 @@
             <div #contactSection class="contact-data">
                 <div class="important-message">
                     <div>
-                        <span class="body-md important-message__title">business time</span>
+                        <span class="body-md important-message__title">{{ 'contact.title' | translate }}</span>
                     </div>
                     <div>
-                        <span class="important-message__description">Ask me, and lets talk about intersting
-                            projects!</span>
+                        <span class="important-message__description">{{ 'contact.description' | translate }}</span>
                     </div>
                 </div>
 
                 <div class="link-section">
                     <div>
                         <span>pedromartinezgcicuendez&#64;gmail.com</span>
-                        <span class="no-hover">Madrid, Spain</span>
+                        <span class="no-hover">{{ 'contact.location' | translate }}</span>
                     </div>
                     <div>
                         <span>LinkedIn</span>
