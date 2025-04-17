@@ -1,0 +1,90 @@
+{
+    "common": {
+        "intermediate": "Mittelstufe",
+        "advanced": "Fortgeschritten",
+        "intermediateHigh": "Mitt. - Fortgeschritten",
+        "lang": {
+            "es": "Spanisch",
+            "en": "Englisch",
+            "de": "Deutsch"
+        }
+    },
+    "menu": {
+        "brand": {
+            "first": "GRANDE",
+            "last": "DEV",
+            "js": "JavaScript",
+            "frontend": "Frontend-Entwickler",
+            "angular": "Angular"
+        },
+        "sections": {
+            "projects": "Projekte",
+            "aboutMe": "Über mich",
+            "contact": "Kontakt"
+        }
+    },
+    "aboutMe": {
+        "title": "Bescheidenheitszeit",
+        "description": "Leidenschaftlicher, junger Ingenieur, Frontend-Entwickler und Designer. Strebt nach Schönheit und Dynamik."
+    },
+    "profile": {
+        "title": "DEN SCHÖPFER KENNENLERNEN",
+        "description1": "Frontend-Entwickler, spezialisiert auf Angular. Eine sehr interessierte Person in der Web-/App-Entwicklung. Dynamische Nutzung von JavaScript, Angular und Ionic als Grundlage und Figma sowie Webflow für eine beeindruckende ästhetische Oberfläche.",
+        "description2": "Ich habe ein Jahr im Ausland verbracht und war in Kontakt mit Menschen aller Art, daher wird Mobilität außerhalb des Landes kein Problem sein."
+    },
+    "experience": {
+        "academicProfile": {
+            "title": "AKADEMISCHES PROFIL",
+            "subsection1": {
+                "place": "Universität von Kastilien-La Mancha",
+                "studies": "Abschluss in Maschinenbau"
+            },
+            "subsection2": {
+                "place": "Universität Perugia",
+                "studies": "Ergänzende Ausbildung für Ingenieure",
+                "course": "Kurs 2019-2020"
+            }
+        },
+        "moreEducation": {
+            "title": "WEITERE AUSBILDUNG",
+            "subsection1": "Englisch-Intensivkurs (UIMP)",
+            "subsection2": "Erasmus +",
+            "subsection3": "Master in JavaScript: JS, JQuery, Angular, NodeJS",
+            "subsection4": "Ionic 6+: Erstellung von iOS-, Android- und PWA-Apps mit Angular",
+            "subsection5": "SOLID-Prinzipien und Clean Code"
+        },
+        "workExperience": {
+            "title": "BERUFSERFAHRUNG",
+            "subsection1": {
+                "title": "Frontend-Entwickler bei OPTIMIZA Process",
+                "description": "Entwicklung von Web- und Apps mit Ionic + Angular",
+                "time": "März 2022 - Januar 2023",
+                "modality": "100% remote."
+            },
+            "subsection2": {
+                "title": "Frontend-Entwickler bei ORENES",
+                "description": "Entwicklung von Web- und Apps mit Angular in den neuesten Versionen. Kontinuierliche Integration, Zusammenarbeit mit verschiedenen Abteilungen (Back, QA, DevOps). Arbeit in Sprints.",
+                "time": "März 2023 - Jetzt",
+                "modality": "100% remote."
+            },
+            "subsection3": {
+                "title": "Programmierer in eigenen Projekten",
+                "description": "Webentwicklung, Frontend",
+                "time": "2021-Heute"
+            }
+        },
+        "skills": {
+            "title": "FÄHIGKEITEN",
+            "entity": {
+                "english": "Englisch",
+                "italian": "Italienisch",
+                "spanish": "Spanisch"
+            }
+        }
+    },
+    "contact": {
+        "title": "Geschäftszeit",
+        "description": "Fragen Sie mich, und lassen Sie uns über interessante Projekte sprechen!",
+        "location": "Madrid, Spanien"
+    }
+}
